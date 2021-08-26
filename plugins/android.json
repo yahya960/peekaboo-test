@@ -12,6 +12,9 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.example.helloapp"
+    },
+    "peekaboo": {
+      "PACKAGE_NAME": "com.example.helloapp"
     }
   },
   "dependent_plugins": {}

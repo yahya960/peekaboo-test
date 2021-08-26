@@ -14,5 +14,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "peekaboo": {
+    "source": {
+      "type": "local",
+      "path": "D:\\OBDX\\Cordova-projects\\peekaboo-test\\node_modules\\peekaboo-connect-cordova"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

@@ -24,4 +24,8 @@
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
+    <feature name="peekaboo">
+        <param name="android-package" value="org.apache.cordova.peekaboo.Peekaboo" />
+        <param name="onload" value="true" />
+    </feature>
 </widget>

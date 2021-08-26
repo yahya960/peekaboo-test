@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    publishNonDefault true
+    dexOptions {
+        jumboMode = true
+        javaMaxHeapSize "8g"
+    }
+    defaultConfig {
+        multiDexEnabled true
+    }
+    repositories() {
+        maven {
+            url  "https://dl.bintray.com/peekabooconnect/com.peekaboo.connect"
+        }
+        maven { url "https://jitpack.io" }
+    }
+    packagingOptions {
+        pickFirst '**/armeabi-v7a/libc++_shared.so'
+        pickFirst '**/x86/libc++_shared.so'
+        pickFirst '**/arm64-v8a/libc++_shared.so'
+        pickFirst '**/x86_64/libc++_shared.so'
+        pickFirst '**/x86/libjsc.so'
+        pickFirst '**/armeabi-v7a/libjsc.so'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.peekaboo.connect:sdk:2.1.41'
+}
+
+repositories {
+    maven {
+        url  "https://dl.bintray.com/peekabooconnect/com.peekaboo.connect"
+    }
+    maven {
+        url 'https://maven.google.com/'
+    }
+    jcenter()
+    flatDir {
+        dirs 'libs'
+    }
+    mavenLocal()
+    maven { url "https://jitpack.io" }
+}
+
+configurations.all {
+    resolutionStrategy {
+        force "com.facebook.soloader:soloader:0.8.0"
+    }    
+}
